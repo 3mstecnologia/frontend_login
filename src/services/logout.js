@@ -1,6 +1,7 @@
-import { destroyCookie } from "nookies";
+import { removeCookies } from "cookies-next";
+import Router from "next/router";
 
 export default function Logout() {
-  destroyCookie(null, "token");
-  return <Redirect to="/login" />;
+  removeCookies("token");
+  Router.push("/login");
 }
